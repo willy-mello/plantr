@@ -2,7 +2,7 @@ const sequelize= require('sequelize');
 const db= new sequelize('postgres://localhost:5432/plantr');
 
 
-module.exports= db;
+
 
 
 const Gardener = db.define('Gardeners', {
@@ -56,3 +56,6 @@ Plot.belongsTo(Gardener);
 Gardener.hasOne(Plot);
 
 Gardener.belongsTo(Vegetable, {as:'favorite_vegetable'});
+
+module.exports= db;
+//exporting all the stuff
